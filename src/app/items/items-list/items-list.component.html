@@ -1,0 +1,8 @@
+<ListView [items]="items$ | async" class="list-group">
+        <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+            <!-- <GridLayout class="list-group-item" [class.odd]="odd" [class.even]="even">
+                <Label [text]="item.title" android:class="label-item"></Label>
+            </GridLayout> -->
+            <ns-items-list-item [item]="item"></ns-items-list-item>
+        </ng-template>
+</ListView>
