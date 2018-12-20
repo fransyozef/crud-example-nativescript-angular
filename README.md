@@ -1,4 +1,4 @@
-# IONIC 4 simple CRUD example
+# NativeScript (Angular) simple CRUD example
 This project is a NativeScript version of my Angular project: https://github.com/fransyozef/crud-example-angular
 
 
