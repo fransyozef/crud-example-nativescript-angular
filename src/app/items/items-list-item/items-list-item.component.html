@@ -1,3 +1,1 @@
-<GridLayout class="list-group-item">
-    <Label [text]="item.title" android:class="label-item"></Label>
-</GridLayout>
+<Label [nsRouterLink]="['/items/edit/', item.id]" [text]="item.title" class="list-group-item"></Label>

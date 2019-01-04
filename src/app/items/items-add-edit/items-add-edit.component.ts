@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ItemModel } from '../_models/item.model';
+import { ItemsService } from '../_services/items.service';
 
 @Component({
   selector: 'ns-items-add-edit',
@@ -8,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemsAddEditComponent implements OnInit {
 
-  constructor() { }
+  @Input() item: ItemModel;
+
+  constructor(
+    private itemsService: ItemsService,
+  ) { }
 
   ngOnInit() {
   }

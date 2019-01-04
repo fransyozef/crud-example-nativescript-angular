@@ -1,1 +1,9 @@
-<Button text="item-edit works!" class="btn btn-primary"></Button>
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Edit item"></Label>
+</ActionBar>
+    
+<StackLayout class="page">
+    <ScrollView>
+        <ns-items-add-edit [item]="item"></ns-items-add-edit>
+    </ScrollView>
+</StackLayout>
