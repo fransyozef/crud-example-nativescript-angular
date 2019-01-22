@@ -1,5 +1,9 @@
 <ActionBar class="action-bar">
-    <Label class="action-bar-title" text="Items"></Label>
+    <Label class="action-bar-title" text="Items overview"></Label>
+
+    <ActionItem tap="add()"
+    ios.systemIcon="4" ios.position="right"
+    text="delete" android.position="popup" [nsRouterLink]="['/items/add']" ></ActionItem>
 </ActionBar>
     
 <StackLayout class="page">

@@ -11,6 +11,11 @@ export class ItemsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
+  }
+
+  add() {
+    console.log("ad()");
   }
 
 }

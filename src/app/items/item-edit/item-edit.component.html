@@ -1,5 +1,9 @@
 <ActionBar class="action-bar">
-    <Label class="action-bar-title" text="Edit item"></Label>
+    <Label class="action-bar-title" text="Item edit"></Label>
+
+    <ActionItem (tap)="delete()"
+    ios.systemIcon="16" ios.position="right"
+    text="delete" android.position="popup"></ActionItem>
 </ActionBar>
     
 <StackLayout class="page">
