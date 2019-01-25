@@ -20,14 +20,13 @@
                 <label  text="Please wait.." class='m-x-auto'></label>
             </StackLayout>
 
-
-            <StackLayout *ngIf="!hasItems(items$ | async) && !isProcessing" class='m-x-auto m-t-30' (tap)="add()">
-                <label  text="You don't have any items." class="h2"></label>
+            <StackLayout *ngIf="!hasItems(items$ | async) && !isProcessing" class='p-x-auto m-5 m-t-20 bg-warning' (tap)="add()">
+                <label  text="You don't have any items." class="h2 m-x-auto"></label>
                 <label  text="Try adding one." class='m-x-auto'></label>
             </StackLayout>
 
             <ns-items-list></ns-items-list>
-            
+
         </StackLayout>
     </ScrollView>
 </StackLayout>
