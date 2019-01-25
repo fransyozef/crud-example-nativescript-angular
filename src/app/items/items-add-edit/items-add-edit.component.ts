@@ -12,7 +12,7 @@ export class ItemsAddEditComponent implements OnInit {
 
   @Input() item: ItemModel;
 
-  personMetadata: any = {
+  itemMetadata: any = {
     'isReadOnly': false,
     'commitMode': 'Immediate',
     'validationMode': 'Immediate',
