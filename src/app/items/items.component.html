@@ -1,13 +1,33 @@
 <ActionBar class="action-bar">
     <Label class="action-bar-title" text="Items overview"></Label>
 
-    <ActionItem tap="add()"
+    <ActionItem (tap)="refresh()"
+    ios.systemIcon="13" ios.position="left"
+    text="refresh" android.position="popup" ></ActionItem> 
+
+    <ActionItem (tap)="add()"
     ios.systemIcon="4" ios.position="right"
-    text="delete" android.position="popup" [nsRouterLink]="['/items/add']" ></ActionItem>
+    text="delete" android.position="popup"  *ngIf="!isProcessing"></ActionItem>
+
 </ActionBar>
     
 <StackLayout class="page">
     <ScrollView>
-        <ns-items-list></ns-items-list>
+        <StackLayout>
+
+            <StackLayout *ngIf="isProcessing" class='m-t-30'>
+                <ActivityIndicator color="green" busy="true" ></ActivityIndicator>
+                <label  text="Please wait.." class='m-x-auto'></label>
+            </StackLayout>
+
+
+            <StackLayout *ngIf="!hasItems(items$ | async) && !isProcessing" class='m-x-auto m-t-30' (tap)="add()">
+                <label  text="You don't have any items." class="h2"></label>
+                <label  text="Try adding one." class='m-x-auto'></label>
+            </StackLayout>
+
+            <ns-items-list></ns-items-list>
+            
+        </StackLayout>
     </ScrollView>
 </StackLayout>

@@ -3,6 +3,7 @@ import { PageRoute } from 'nativescript-angular/router';
 import { switchMap } from "rxjs/operators";
 import { ItemsService } from '../_services/items.service';
 import { ItemModel } from '../_models/item.model';
+import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
   selector: 'ns-item-edit',
@@ -24,6 +25,7 @@ export class ItemEditComponent implements OnInit {
   constructor(
     private pageRoute: PageRoute,
     private itemsService: ItemsService,
+    private routerExtensions: RouterExtensions,
   ) { }
 
   ngOnInit() {
@@ -48,7 +50,10 @@ export class ItemEditComponent implements OnInit {
       this.isProcessing  = true;
       this.itemsService.delete(this.item.id).subscribe(
         (status) => {
-          console.log("navigate back to list");
+          this.routerExtensions.navigate(["/items"], { 
+            clearHistory: true ,
+          }); 
+
         }
       );
     }
