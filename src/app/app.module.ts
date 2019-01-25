@@ -1,5 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -31,6 +32,7 @@ import { ItemsService } from "./items/_services/items.service";
         ReactiveFormsModule,
         FormsModule,
         HttpClientModule,
+        NativeScriptUIDataFormModule,
     ],
     declarations: [
         AppComponent,

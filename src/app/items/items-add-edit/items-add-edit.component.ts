@@ -12,11 +12,28 @@ export class ItemsAddEditComponent implements OnInit {
 
   @Input() item: ItemModel;
 
+  personMetadata: any = {
+    'isReadOnly': false,
+    'commitMode': 'Immediate',
+    'validationMode': 'Immediate',
+    'propertyAnnotations': [
+      {
+        'name': 'id',
+        'displayName': 'ID',
+        'index': 1,
+        'editor': 'Number',
+        'hidden': true,
+        "ignore":true
+      },
+    ]
+  };
+
   constructor(
     private itemsService: ItemsService,
   ) { }
 
   ngOnInit() {
+    console.log(this.item);
   }
 
 }
