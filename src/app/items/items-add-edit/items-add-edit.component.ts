@@ -12,6 +12,8 @@ export class ItemsAddEditComponent implements OnInit {
 
   @Input() item: ItemModel;
 
+  isProcessing: boolean;
+
   itemMetadata: any = {
     'isReadOnly': false,
     'commitMode': 'Immediate',
@@ -33,7 +35,12 @@ export class ItemsAddEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.isProcessing  = false;
     console.log(this.item);
+  }
+
+  getButtonText(): string {
+    return this.item ? 'Update' : 'Add';
   }
 
 }

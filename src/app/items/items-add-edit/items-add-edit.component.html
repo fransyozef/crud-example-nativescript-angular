@@ -4,6 +4,14 @@
         
     <StackLayout class="page">
         <ScrollView>
+            <StackLayout>
                 <RadDataForm tkExampleTitle tkToggleNavButton [source]="item" [metadata]="itemMetadata"></RadDataForm>
+
+                <GridLayout columns="*, *" rows="*">
+                    <button *ngIf="!isProcessing" [text]="getButtonText()" row="0" col="0"></button>
+                    <button *ngIf="!isProcessing" text="Delete item" row="0" col="1"></button>
+                </GridLayout>
+
+            </StackLayout>
         </ScrollView>
     </StackLayout>
